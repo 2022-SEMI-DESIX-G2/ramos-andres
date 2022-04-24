@@ -1,0 +1,20 @@
+.carta{
+width: 5em;
+height: 2em;
+box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+transition: 0.3s;
+border-radius: 5px;
+margin: 0 1em 1em 0;
+text-align: center;
+}
+
+.carta:hover{
+    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+}
+
+#contenedor{
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    margin: 2em 0em;
+}
