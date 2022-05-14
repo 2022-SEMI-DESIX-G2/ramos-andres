@@ -1,0 +1,212 @@
+*{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Montserrat";
+}
+
+body{
+  background-color: #001823;
+}
+
+.form-section{
+  width: 90%;
+  margin: 0 auto;
+  margin-left: auto;
+  margin-top: 6rem;
+}
+
+.form-section-container{
+  position: relative;
+    height: auto;
+    width: 450px;
+    margin: auto;
+    margin-top: auto;
+    border-radius: 10px;
+    background: azure;
+    padding: 2rem 2rem;
+}
+
+.form-logo img{
+  position: absolute;
+    left: 7.7rem;
+    top: -4.3rem;
+}
+
+.form-description h3{
+  color: #3761a8;
+}
+
+#pokemon-finder-form{
+  background-color: azure;
+  width: 100%;
+  margin: auto;
+  margin-top: auto;
+  border-radius: 10px;
+}
+
+.input-container{
+  display: flex;
+  width: 100%;
+}
+
+.form-input{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  padding: 10px 20px;
+}
+
+.form-input input{
+  max-width: 14.6rem;
+  border: none;
+  border-radius: 4px;
+  background-color: #f1f1f1;
+}
+
+.form-search-type{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  padding: 10px 20px;
+}
+
+.form-search-type select{
+  max-width: 16rem;
+  border: none;
+  border-radius: 4px;
+  background-color: #f1f1f1;
+}
+
+.form-button{
+  padding: 10px 10px;
+  width: 100%;
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: space-between;
+}
+
+.form-button>button{
+  background-color: #3761a8;
+  border: none;
+  color: white;
+  width: 30%;
+  text-align: center;
+  padding: 0.3rem;
+  border-radius: 2px;
+  font-size: 16px;
+  font-family: 'Montserrat';
+}
+
+.hidden-button{
+  display: none;
+}
+
+.display-button{
+  display: block;
+}
+
+.card{
+  background-color: azure;
+  position: relative;
+  margin: auto;
+  margin-top: 3rem;
+  width: 450px;
+  padding: 30px 20px;
+  border-radius: 10px;
+}
+
+.pokedex-number{
+  width: 80px;
+  background-color: #f0d803;
+  border: 3px solid #3761a8;
+  text-align: center;
+  padding: 4px 0;
+  border-radius: 10px;
+  margin-right: auto;
+  font-weight: 300;
+  color: #3761a8;
+}
+
+.pokedex-number span{
+  font-size: 18px;
+  letter-spacing: 0.4px;
+  font-weight: 600;
+}
+
+.pokemon-name{
+  text-align: left;
+  font-weight: 600;
+}
+
+.pokemon-sprites{
+  text-align: left;
+  font-weight: 600;
+}
+
+.pokemon-atributtes{
+    display: flex;
+    position: relative;
+    width: 100%;
+    margin: auto;
+    margin-top: auto;
+    margin-left: auto;
+    background: azure;
+    padding: auto;  
+}
+
+.pokemon-abilities{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  padding: 10px 15px;
+}
+
+.pokemon-evolution-chain{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  padding: 10px 15px;
+}
+
+.pokemon-dimensions{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  padding: 10px 15px;
+}
+
+.ability-card{
+  background-color: azure;
+  position: relative;
+  margin: auto;
+  margin-top: 3rem;
+  width: 450px;
+  padding: 30px 20px;
+  border-radius: 10px;
+}
+
+.ability-number{
+  width: 80px;
+  background-color: #3761a8;
+  text-align: center;
+  padding: 8px 0;
+  border-radius: 30px;
+  margin-right: auto;
+  font-weight: 400;
+}
+
+.ability-number span{
+  font-size: 18px;
+  letter-spacing: 0.4px;
+  font-weight: 600;
+}
+
+.ability-name{
+  text-align: left;
+  font-weight: 600;
+}
+
+.pokemon-list ul{
+  display: inline;
+}
