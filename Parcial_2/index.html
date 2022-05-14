@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Lab 6</title>
+</head>
+<body>
+    <section class="form-section">
+        <section class="form-section-container">
+            <div class="form-logo">
+                <img src="https://raw.githubusercontent.com/PokeAPI/media/master/logo/pokeapi_256.png" alt="">
+            </div>
+            <div class="form-description">
+                <h3>Find any Pokemon or Ability</h3>
+                <label for="">First choose what do you want to find, either a pokemon or an ability and next type the name.</label>
+            </div>
+            <form id="pokemon-finder-form">
+                <div class="input-container">
+                    <div class="form-input">
+                        <label for="">Name: </label>
+                        <input type="text" id="pokemon-finder-query">
+                    </div>
+                    <div class="form-search-type">
+                        <label for="">Type of Search: </label>
+                        <select id="pokemon-finder-search-type">
+                            <option value="pokemon">Pokemon</option>
+                            <option value="ability">Ability</option>
+                        </select>
+                    </div>
+                </div>
+                <section class="form-button" id="form-button">
+                    <button type="submit">Search</button>
+                    <button type="button" class="hidden-button" id="clean-button">Clear</button>
+                    
+                </section>
+                
+            </form>
+        </section>
+    </section>
+    <section id="pokemon-finder-response"></section>
+    <script src="utils.js"></script>
+    <script src="index.js"></script>
+</body>
+</html>
