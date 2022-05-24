@@ -29,12 +29,13 @@
   
   .form-logo img{
     position: absolute;
-      left: 7.7rem;
+      left: 5.5rem;
       top: -4.3rem;
   }
   
   .form-description h3{
     color: #3761a8;
+    padding: 0.5rem;
   }
   
   #pokemon-finder-form{

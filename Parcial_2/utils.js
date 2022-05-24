@@ -68,4 +68,4 @@
         },
     };
     document.Utils = Utils;
-})()
+})()    

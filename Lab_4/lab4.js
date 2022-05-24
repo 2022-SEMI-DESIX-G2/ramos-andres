@@ -21,7 +21,7 @@ function Fibonacci(limit){
 function calcular(e){
     var fib = [];
     const numero = document.getElementById("integer").value;
-    var contador = 0;
+
     fib = Fibonacci(numero);
     
     fib.forEach(Number =>{
