@@ -1,9 +1,22 @@
 const axios = require("axios");
 
-const prueba = async() => {
-    const {status,data} = await axios("https://pokeapi.co/api/v2/pokemon/ditto");
-    console.log({status});
-    console.log({data});
+const main = async() => {
+    const {data} = await axios("https://pokeapi.co/api/v2/pokemon/ditto");
+    console.log(getPokemon(data));
 }
 
-prueba();
+getPokemon = ({id, name, weight, height, abilities}) => {
+    let abilitiesList = []
+    abilities.map(({ ability}) => {
+        abilitiesList.push({ name: ability.name})
+    });
+
+    /*let evoList = []
+    evo_chain.map(({ name, is_baby}) =>{
+        evoList.push({ name, is_baby});
+    });*/
+
+    return data = { id, name, weight, height, abilitiesList}
+};
+
+main();
