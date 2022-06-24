@@ -3,6 +3,9 @@
         htmlElements: {
             pokemonFinderForm: document.querySelector("#pokemon-finder-form"),
             pokemonFinderSearchType: document.querySelector("#pokemon-finder-search-type"),
+            spriteCheckbox: document.querySelector("#pokemon-sprite-query"),
+            evolutionCheckbox: document.querySelector("#pokemon-evolution-query"),
+            encounterCheckbox: document.querySelector("#pokemon-enconunter-query"),
             pokemonFinderInput: document.querySelector("#pokemon-finder-query"),
             pokemonFinderOutput: document.querySelector("#pokemon-finder-response"),
             pokemonFinderButtonForm: document.querySelector("#button-form"),
@@ -51,7 +54,6 @@
             },
             pokemonFinderCleanButtonOnClick: () => {
                 App.htmlElements.pokemonFinderInput.value = '';
-                App.htmlElements.pokemonFinderSearchType.value = 'default';
                 App.htmlElements.pokemonFinderOutput.innerHTML = '';
                 App.htmlElements.pokemonFinderCleanButton.classList.remove('display-button');
             },
@@ -59,17 +61,21 @@
         template: {
             render: ({searchType, response}) =>{
                 const renderMap = {
-                    ability:  App.template.abilityCard,
-                    pokemon:  App.template.pokemonCard,
+                    ability:    App.template.abilityCard,
+                    pokemon:    App.template.pokemonCard,
+                    sprites:    App.template.spriteCard,
+                    evolution:  App.template.evolutionCard,
+                    encounter:  App.template.encounterCard
                 };
                 return renderMap[searchType]
-                ? renderMap[searchType](response)
+                ? [renderMap.pokemon(response), 
+                    App.htmlElements.spriteCheckbox.checked ? renderMap.sprites(response) : ""
+                    , App.htmlElements.evolutionCheckbox.checked ? renderMap.evolution(response) : ""]
                 : App.template.errorCard();    
             },
-            
             errorCard: () => `<h1>There was an error</h1>`,
 
-            pokemonCard: ({ abilities,evo_chain, height, id, name, sprites, weight, }) => {
+            pokemonCard: ({ abilities, height, id, name, weight }) => {
                 
                 const abilityList = abilities.map(
                     ({ability, is_hidden}) => 
@@ -77,14 +83,7 @@
                         is_hidden ? App.htmlElements.isHiddenLogo : ""
                       }</li>`
                 );
-                
-                const evolutionList = evo_chain.map(
-                    ({name, is_baby}) => 
-                    `<li style="text-transform: capitalize">${name} ${
-                        is_baby ? App.htmlElements.isBabyLogo : ""
-                    }</li>`
-                );
-                   
+
                 return '<div class="card">'+
                             '<div>'+
                                 '<p><b>Pokedex Number</b></p>'+
@@ -92,23 +91,12 @@
                                     `<span>#${id}</span>`+
                                 '</p>'+
                             '</div>'+
-                            '<div class="pokemon-sprites">'+
-                                '<p><b>Sprites</b></p>'+
-                                `<img src="${sprites.front_default}" alt="">`+
-                                `<img src="${sprites.back_default}" alt="">`+
-                                `<img src="${sprites.front_shiny}" alt="">`+
-                                `<img src="${sprites.back_shiny}" alt="">`+
-                            '</div>'+
                             `<h2 class="pokemon-name"><b style="text-transform: capitalize">${name}</b></h2>`+
                             '<div class="pokemon-atributtes">'+
                                 '<div class="pokemon-abilities">'+
                                     '<p><b>Abilities</b></p>'+
                                     `<ul>${abilityList.join("")}</ul>`+
-                                '</div>'+
-                                '<div class="pokemon-evolution-chain">'+
-                                    '<p><b>Evolution chain</b></p>'+
-                                    `<ul>${evolutionList.join("")}</ul>`+
-                                '</div>'+   
+                                '</div>'+ 
                                 '<div class="pokemon-dimensions">'+
                                     '<p><b>Dimesions</b></p>'+
                                     '<ul>'+
@@ -117,6 +105,32 @@
                                     '</ul>'+
                                 '</div>'+
                             '</div>'+
+                        '</div>';
+            },
+            spriteCard: ({sprites}) => {
+                return '<div class="sprite-card">'+
+                            '<div class="pokemon-sprites">'+
+                                '<p><b>Sprites</b></p>'+
+                                `<img src="${sprites.front_default}" alt="">`+
+                                `<img src="${sprites.back_default}" alt="">`+
+                                `<img src="${sprites.front_shiny}" alt="">`+
+                                `<img src="${sprites.back_shiny}" alt="">`+
+                            '</div>'+
+                        '</div>';
+            },
+            evolutionCard: ({evo_chain}) => {
+                const evolutionList = evo_chain.map(
+                    ({name, is_baby}) => 
+                    `<li style="text-transform: capitalize">${name} ${
+                        is_baby ? App.htmlElements.isBabyLogo : ""
+                    }</li>`
+                );
+
+                return '<div class="evolution-card">'+
+                            '<div class="pokemon-evolution-chain">'+
+                                '<p><b>Evolution chain</b></p>'+
+                                `<ul>${evolutionList.join("")}</ul>`+
+                            '</div>'+  
                         '</div>';
             },
             abilityCard: ({ id, name, pokemon}) => {

@@ -19,7 +19,7 @@
   .form-section-container{
     position: relative;
       height: auto;
-      width: 450px;
+      width: 550px;
       margin: auto;
       margin-top: auto;
       border-radius: 10px;
@@ -29,7 +29,7 @@
   
   .form-logo img{
     position: absolute;
-      left: 5.5rem;
+      left: 8.8rem;
       top: -4.3rem;
   }
   
@@ -97,6 +97,7 @@
     border-radius: 2px;
     font-size: 16px;
     font-family: 'Montserrat';
+    
   }
   
   .hidden-button{
@@ -112,11 +113,31 @@
     position: relative;
     margin: auto;
     margin-top: 3rem;
-    width: 450px;
+    width: 550px;
     padding: 30px 20px;
     border-radius: 10px;
   }
   
+  .sprite-card{
+    background-color: azure;
+    position: relative;
+    margin: auto;
+    margin-top: 3rem;
+    width: 550px;
+    padding: 30px 20px;
+    border-radius: 10px;
+  }
+
+  .evolution-card{
+    background-color: azure;
+    position: relative;
+    margin: auto;
+    margin-top: 3rem;
+    width: 550px;
+    padding: 30px 20px;
+    border-radius: 10px;
+  }
+
   .pokedex-number{
     width: 80px;
     background-color: #f0d803;
@@ -136,6 +157,11 @@
   }
   
   .pokemon-name{
+    text-align: left;
+    font-weight: 600;
+  }
+  
+  .pokemon-artwork{
     text-align: left;
     font-weight: 600;
   }

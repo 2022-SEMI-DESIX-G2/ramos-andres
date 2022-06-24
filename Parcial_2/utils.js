@@ -48,7 +48,20 @@
                     throw error;
                 }
             },
+
+            getEcounters: async url => {
+                try {
+                    let arraySearch = Utils.methods.getArraySearch(url);
+                    let 
+                } catch (error) {
+                    
+                }
+            },
             
+            getEcountersChain: () => {
+                
+            },
+
             getArrayEvoChain: ({species, is_baby, evolves_to}) => {
                 let evoStacking = [];
                 evoStacking.push({name: species.name, is_baby: is_baby});
