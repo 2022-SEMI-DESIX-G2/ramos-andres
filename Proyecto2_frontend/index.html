@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="styles.css">
+  <title>Proyecto 1</title>
+</head>
+<body>
+  <section class="form-section">
+    <section class="form-section-container">
+      
+      <div class="form-logo">
+        <img src="https://raw.githubusercontent.com/PokeAPI/media/master/logo/pokeapi_256.png" alt="">
+      </div>
+      
+      <div class="form-description">
+        <h3>New Version!</h3>
+        <label>This new version of PokeAPI shows you new information like the encounter sites.</label>
+        <label>Just check the information you want to display.</label>
+      </div>
+
+      <form id="pokemon-finder-form">
+
+        <div class="input-container">
+          <label for="pokemon-input">Pokemon:</label>
+          <input type="text" id="pokemon-input">
+        </div>
+
+        <div class="form-checkbox">
+          <label for="">Sprites</label>
+          <input type="checkbox" id="pokemon-sprite-query">
+          <label for="pokemon-sprite-query" class="sprite-switch"></label>
+          
+          <label for="" class="checkbox-title">Evolution chain</label>
+          <input type="checkbox" id="pokemon-evolution-query">
+          <label for="pokemon-evolution-query" class="evolution-switch"></label>
+
+          <label for="" class="checkbox-title">Encounters</label>
+          <input type="checkbox" id="pokemon-encounter-query">
+          <label for="pokemon-encounter-query" class="encounter-switch"></label>
+        </div>
+
+        <section class="form-button">
+          <button type="submit" id="search-button">Search</button>
+        </section>
+        
+      </form>
+    </section>
+  </section>
+  <section id="pokemon-finder-response"></section>
+  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+  <script src="index.js"></script>
+</body>
+</html>
